@@ -1,7 +1,5 @@
 class UserController < ApplicationController
-    before_action :authenticate_user
-      
-    def show
+    def create
         render json: current_user.as_json(only: [:role, :email])
     end   
 end
