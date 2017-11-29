@@ -1,8 +1,17 @@
 {
   "type": "object",
-  "required": ["email", "role"],
+  "required": ["caregiver"],
   "properties": {
-    "email": {"type": "string"},
-    "role": {"type": "string"}
+    "caregiver": {
+      "type": "object",
+      "required":[
+        "firstName",
+        "lastName"
+      ],
+      "properties": {
+        "firstName":  {"type": "string"},
+        "lastName":   {"type": "string"}
+      }
+    }
   }
 }

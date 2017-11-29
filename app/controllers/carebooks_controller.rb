@@ -3,7 +3,12 @@ class CarebooksController < ApplicationController
         render json: current_user.as_json(only: [:role, :email])
     end
 
-    def show
-      render json: {"booger": 673}
+    def index
+      render json:{
+        "caregiver": {
+          "firstName": "Jean",
+          "lastName": "Lange"
+          }
+        }
     end
 end
