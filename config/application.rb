@@ -27,5 +27,13 @@ module MyPalRails
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    #added this to allow cors
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :patch, :options]
+      end
+    end
   end
 end

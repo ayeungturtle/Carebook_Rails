@@ -4,6 +4,6 @@ class CarebooksController < ApplicationController
     end
 
     def show
-      render json: {}
+      render json: {"booger": 673}
     end
 end
