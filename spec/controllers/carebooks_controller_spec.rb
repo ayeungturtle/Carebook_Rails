@@ -14,3 +14,18 @@ RSpec.describe CarebooksController, type: :request do
     end
 
   end
+
+  describe 'GET /carebooks' do
+    it 'responds 200' do # 200 means successful request
+      get carebooks_path
+      expect(response.status).to be(200)
+    end
+
+    it 'responds has correct schema' do
+      get carebooks_path
+      puts response.parsed_body
+      expect(response).to match_response_schema(:carebook)
+    end
+  end
+
+end

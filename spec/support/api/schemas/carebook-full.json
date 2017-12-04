@@ -1,0 +1,169 @@
+{
+  "type": "object",
+  "required": ["caregiver","child","doctors","pharmacy"],
+  "properties": {
+    "caregiver": {
+      "type": "object",
+      "required":[
+        "firstName",
+        "lastName",
+        "address",
+        "phone",
+        "email",
+        "relationship"
+      ],
+      "properties": {
+        "firstName":  {"type": "string"},
+        "lastName":   {"type": "string"},
+        "address":    {"type": "object",
+                        "required": [
+                          "line1",
+                          "line2",
+                          "city",
+                          "state",
+                          "zip"
+                        ],
+                        "properties":{
+                          "line1":  {"type": "string"},
+                          "line2":  {"type": "string"},
+                          "city":   {"type": "string"},
+                          "state":  {"type": "string"},
+                          "zip":    {"type": "string"}
+                        }
+                      },
+        "phone":   {"type": "object",
+                      "required": [
+                          "label",
+                          "number"
+                      ],
+                      "properties":{
+                        "label":  {"type": "string"},
+                        "number":  {"type": "string"}
+                      }
+                    },
+        "email":   {"type": "string"},
+        "relationship":   {"type": "string"}
+      }
+    }
+  },
+  "properties": {
+    "child": {
+      "type": "object",
+      "required":[
+        "firstName",
+        "lastName",
+        "sex",
+        "birthdate",
+        "height",
+        "weight",
+        "insurance",
+        "diagnoses",
+        "allergies",
+        "history"
+      ],
+      "properties": {
+        "firstName":    {"type": "string"},
+        "lastName":     {"type": "string"},
+        "sex":          {"type": "string"},
+        "birthdate":    {"type": "string"},
+        "height":       {"type": "string"},
+        "weight":       {"type": "string"},
+        "insurance":    {"type": "string"},
+        "diagnoses":    {"type": "object",
+                          "required":[],
+                          "properties":{}
+                        },
+        "allergies":    {"type": "object",
+                          "required":[],
+                          "properties":{}
+                        },
+        "history":      {"type": "string"}
+      }
+    }
+  },
+  "properties": {
+    "doctors": {
+      "type": "object",
+        "required":[
+          "label",
+          "firstName",
+          "lastName",
+          "phone",
+          "email",
+          "address"
+        ],
+        "properties": {
+          "label":      {"type": "string"},
+          "firstName":  {"type": "string"},
+          "lastName":   {"type": "string"},
+          "phone":      {"type": "object",
+                          "required": [
+                            "label",
+                            "number"
+                          ],
+                          "properties":{
+                            "label":    {"type": "string"},
+                            "number":   {"type": "string"}
+                          }
+                        },
+          "email":      {"type": "string"},
+          "address":    {"type": "object",
+                          "required": [
+                            "line1",
+                            "line2",
+                            "city",
+                            "state",
+                            "zip"
+                          ],
+                          "properties":{
+                            "line1":  {"type": "string"},
+                            "line2":  {"type": "string"},
+                            "city":   {"type": "string"},
+                            "state":  {"type": "string"},
+                            "zip":    {"type": "string"}
+                          }
+                        }
+        }
+      }
+    },
+    "properties": {
+      "pharmacy": {
+        "type": "object",
+          "required":[
+            "name",
+            "address",
+            "phone"
+          ],
+          "properties": {
+            "name":     {"type": "string"},
+            "address":  {"type": "object",
+                            "required":[
+                              "line1",
+                              "line2",
+                              "city",
+                              "state",
+                              "zip"
+                            ],
+                            "properties":{
+                              "line1":  {"type": "string"},
+                              "line2":  {"type": "string"},
+                              "city":   {"type": "string"},
+                              "state":  {"type": "string"},
+                              "zip":    {"type": "string"}
+                            }
+                        },
+            "phone":    {"type": "object",
+                            "required":[
+                              "label",
+                              "number"
+                            ],
+                            "properties":{
+                              "label":    {"type": "string"},
+                              "number":   {"type": "string"}
+                            }
+                        }
+
+      }
+    }
+  }
+}
